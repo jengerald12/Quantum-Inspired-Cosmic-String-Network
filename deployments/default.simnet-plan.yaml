@@ -55,8 +55,8 @@ plan:
             path: contracts/cosmic-string-data.clar
             clarity-version: 2
         - emulated-contract-publish:
-            contract-name: cosmic-string-nft
+            contract-name: energy-harvesting
             emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
-            path: contracts/cosmic-string-nft.clar
+            path: contracts/energy-harvesting.clar
             clarity-version: 2
       epoch: "2.5"

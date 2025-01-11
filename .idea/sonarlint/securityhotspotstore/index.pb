@@ -13,3 +13,5 @@ P
  contracts/energy-harvesting.clar,5/f/5fcc97988946f81e1395b629a3a74791b1c6ffb4
 O
 tests/energy-harvesting.test.ts,2/7/2772ccad88201dd8dafab1c359c6480b73f49864
+W
+'contracts/manipulation-experiments.clar,b/b/bb915eb4dd6bbf1454b83f51d785dcbf99071c88
