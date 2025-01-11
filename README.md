@@ -4,6 +4,7 @@ A theoretical simulation platform for studying, detecting, and exploring potenti
 
 ## Overview
 
+
 QICSNMP enables researchers to simulate and study cosmic strings - hypothetical one-dimensional defects in spacetime - through quantum-inspired algorithms and theoretical physics frameworks. The platform focuses on understanding their behavior, interactions, and potential applications.
 
 ## Core Systems
