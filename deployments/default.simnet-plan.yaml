@@ -59,4 +59,9 @@ plan:
             emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
             path: contracts/energy-harvesting.clar
             clarity-version: 2
+        - emulated-contract-publish:
+            contract-name: manipulation-experiments
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/manipulation-experiments.clar
+            clarity-version: 2
       epoch: "2.5"

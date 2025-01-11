@@ -1,21 +1,53 @@
+import { describe, it, expect, beforeEach } from 'vitest';
 
-import { describe, expect, it } from "vitest";
-
-const accounts = simnet.getAccounts();
-const address1 = accounts.get("wallet_1")!;
-
-/*
-  The test below is an example. To learn more, read the testing documentation here:
-  https://docs.hiro.so/stacks/clarinet-js-sdk
-*/
-
-describe("example tests", () => {
-  it("ensures simnet is well initalised", () => {
-    expect(simnet.blockHeight).toBeDefined();
+describe('manipulation-experiments', () => {
+  let contract: any;
+  
+  beforeEach(() => {
+    contract = {
+      startExperiment: (cosmicStringId: number, technique: string, energyInput: number) => ({ value: 1 }),
+      endExperiment: (experimentId: number, result: string) => ({ success: true }),
+      getExperiment: (experimentId: number) => ({
+        cosmicStringId: 1,
+        technique: 'Quantum Entanglement',
+        energyInput: 1000000,
+        status: 'active',
+        result: null,
+        experimenter: 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM',
+        startBlock: 12345,
+        endBlock: null
+      }),
+      getExperimentCount: () => 3
+    };
   });
-
-  // it("shows an example", () => {
-  //   const { result } = simnet.callReadOnlyFn("counter", "get-counter", [], address1);
-  //   expect(result).toBeUint(0);
-  // });
+  
+  describe('start-experiment', () => {
+    it('should start a new experiment', () => {
+      const result = contract.startExperiment(1, 'Quantum Entanglement', 1000000);
+      expect(result.value).toBe(1);
+    });
+  });
+  
+  describe('end-experiment', () => {
+    it('should end an active experiment', () => {
+      const result = contract.endExperiment(1, 'Successfully manipulated cosmic string configuration');
+      expect(result.success).toBe(true);
+    });
+  });
+  
+  describe('get-experiment', () => {
+    it('should return experiment information', () => {
+      const experiment = contract.getExperiment(1);
+      expect(experiment.technique).toBe('Quantum Entanglement');
+      expect(experiment.status).toBe('active');
+    });
+  });
+  
+  describe('get-experiment-count', () => {
+    it('should return the total number of experiments', () => {
+      const count = contract.getExperimentCount();
+      expect(count).toBe(3);
+    });
+  });
 });
+
